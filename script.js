@@ -84,7 +84,9 @@ function guardarDatos() {
 
 function eliminarManga(index) {
 
-    if (confirm("¿Eliminar este manga?")) {
+    const manga = mangas[index];
+
+    if (confirm(`¿Seguro que deseas eliminar "${manga.titulo}"? Esta acción no se puede deshacer.`)) {
 
         mangas.splice(index, 1);
 
