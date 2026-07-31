@@ -140,3 +140,29 @@ button{
     box-sizing:border-box;
 
 }
+
+.container{
+
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+
+}
+
+table tbody tr:nth-child(even){
+
+    background:#f5f5f5;
+
+}
+
+table tbody tr:hover{
+
+    background:#e7f1ff;
+
+}
+
+th{
+
+    background:#9d0dfd;
+
+    color:white;
+
+}
