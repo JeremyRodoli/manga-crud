@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MangaWorld CRUD</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>TuMangaOnline2.0</h1>
+
+        <p>Administrador de Mangas</p>
+
+        <form id="mangaForm">
+
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Título"
+                required
+            >
+
+            <input
+                type="text"
+                id="autor"
+                placeholder="Autor"
+                required
+            >
+
+            <input
+                type="text"
+                id="genero"
+                placeholder="Género"
+                required
+            >
+
+            <select id="estado">
+
+                <option>En emisión</option>
+
+                <option>Finalizado</option>
+
+            </select>
+
+            <button type="submit">
+
+                Guardar Manga
+
+            </button>
+
+        </form>
+
+        <hr>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Título</th>
+
+                    <th>Autor</th>
+
+                    <th>Género</th>
+
+                    <th>Estado</th>
+
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaMangas">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
