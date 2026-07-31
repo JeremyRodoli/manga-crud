@@ -1,5 +1,6 @@
 const formulario = document.getElementById("mangaForm");
 const tabla = document.getElementById("tablaMangas");
+const buscador = document.getElementById("buscar");
 
 let mangas = JSON.parse(localStorage.getItem("mangas")) || [];
 let indiceEditar = -1;
@@ -44,7 +45,15 @@ function mostrarMangas() {
 
     tabla.innerHTML = "";
 
-    mangas.forEach((manga, index) => {
+    const texto = buscador.value.toLowerCase();
+
+    const filtrados = mangas.filter(manga =>
+        manga.titulo.toLowerCase().includes(texto)
+    );
+
+    filtrados.forEach((manga) => {
+
+        const indexOriginal = mangas.indexOf(manga);
 
         tabla.innerHTML += `
 
@@ -60,9 +69,9 @@ function mostrarMangas() {
 
             <td>
 
-                <button class="editar" onclick="editarManga(${index})">Editar</button>
+                <button class="editar" onclick="editarManga(${indexOriginal})">Editar</button>
 
-                <button class="eliminar" onclick="eliminarManga(${index})">Eliminar</button>
+                <button class="eliminar" onclick="eliminarManga(${indexOriginal})">Eliminar</button>
 
             </td>
 
@@ -108,3 +117,5 @@ function editarManga(index) {
     indiceEditar = index;
 
 }
+
+buscador.addEventListener("input", mostrarMangas);
