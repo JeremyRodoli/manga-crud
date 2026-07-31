@@ -121,3 +121,6 @@ th,td{
     cursor:pointer;
 
 }
+button{
+    transition:0.3s;
+}
